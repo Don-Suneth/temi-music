@@ -1,6 +1,13 @@
 {
   "version": 1,
-  "tracks": [],
+  "tracks": [
+    {
+      "id": "e127a1b6-da87-45c9-9718-5ca18811d8df",
+      "title": "The greatest show",
+      "kind": "youtube",
+      "videoId": "NyVYXRD1Ans"
+    }
+  ],
   "playlists": [
     {
       "id": "9a7a3f5e-2a23-419a-b806-7fb2071c9fc7",
