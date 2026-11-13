@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Temi Music Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="dashboard.mjs"></script>
+</head>
+<body>
+  <header><div class="wrap brand">♫ <span>Temi Music</span></div></header>
+  <main class="wrap">
+    <div class="intro">
+      <div><h1>Music dashboard</h1><p>Manage the songs and playlists available on Temi.</p></div>
+      <button id="disconnect" class="quiet" hidden>Disconnect</button>
+    </div>
+    <form id="connection" class="panel">
+      <h2>Connect GitHub</h2>
+      <div class="fields">
+        <label>Repository <input name="repository" placeholder="owner/repository" required></label>
+        <label>Branch <input name="branch" value="main" required></label>
+        <label>Fine-grained access token <input name="token" type="password" autocomplete="off" spellcheck="false" required></label>
+      </div>
+      <p class="help">Use a token limited to this repository with Contents read and write. The dashboard keeps it in memory for this tab.</p>
+      <button class="primary">Connect</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="editor" hidden>
+      <div class="workspace">
+        <section class="panel">
+          <div class="section-heading"><h2>Songs</h2><button id="add-song" class="primary">Add song</button></div>
+          <div id="songs"></div>
+        </section>
+        <section class="panel">
+          <div class="section-heading"><h2>Playlists</h2><button id="add-list" class="primary">Create playlist</button></div>
+          <div id="playlists"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="dialog">
+    <form id="edit-form">
+      <h2 id="dialog-title"></h2>
+      <div id="form-fields"></div>
+      <p id="form-error" role="alert"></p>
+      <div class="actions">
+        <button id="cancel" type="button" class="quiet">Cancel</button>
+        <button id="save" type="submit" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
