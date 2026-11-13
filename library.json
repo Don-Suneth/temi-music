@@ -1,5 +1,11 @@
 {
   "version": 1,
   "tracks": [],
-  "playlists": []
+  "playlists": [
+    {
+      "id": "9a7a3f5e-2a23-419a-b806-7fb2071c9fc7",
+      "title": "test",
+      "trackIds": []
+    }
+  ]
 }
